@@ -25,7 +25,7 @@ describe("LocalLoadPurchases", () => {
     expect(cacheStore.actions).toEqual([]);
   });
 
-  test("Should return empty list if load fail", async () => {
+  test("Should return empty list if load fails", async () => {
     const { cacheStore, sut } = makeSut();
     cacheStore.simulateFetchError();
     const purchases = await sut.loadAll();
