@@ -57,12 +57,8 @@ describe("LocalLoadPurchases", () => {
       value: mockPurchases(),
     };
     const purchases = await sut.loadAll();
-    expect(cacheStore.actions).toEqual([
-      CacheStoreSpy.Action.fetch,
-      CacheStoreSpy.Action.delete,
-    ]);
+    expect(cacheStore.actions).toEqual([CacheStoreSpy.Action.fetch]);
     expect(cacheStore.fetchKey).toBe("purchases");
-    expect(cacheStore.deleteKey).toBe("purchases");
     expect(purchases).toEqual([]);
   });
 
@@ -75,12 +71,8 @@ describe("LocalLoadPurchases", () => {
       value: mockPurchases(),
     };
     const purchases = await sut.loadAll();
-    expect(cacheStore.actions).toEqual([
-      CacheStoreSpy.Action.fetch,
-      CacheStoreSpy.Action.delete,
-    ]);
+    expect(cacheStore.actions).toEqual([CacheStoreSpy.Action.fetch]);
     expect(cacheStore.fetchKey).toBe("purchases");
-    expect(cacheStore.deleteKey).toBe("purchases");
     expect(purchases).toEqual([]);
   });
 
